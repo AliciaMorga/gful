@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Schedule New Message</h2>
+	<form method="POST" enctype="multipart/form-data">
+	<label class="c-label">
+		Audience
+	<select class="c-input" name="group">
+	  {% for group in groups %}
+	  	<option value="{{group.id}}">{{group.name}}</option>
+	  {% endfor %}
+	</select>
+	</label>
+	<label class="c-label">
+	Message Content (max 160 characters)
+	<textarea class="c-input" name="message" maxlength="160"></textarea>
+	</label>
+	<div class="o-grid">
+		<div class="o-grid__col o-grid__col--1-of-3">
+		  <label class="c-label">
+		    Date
+		    <input class="c-input" type="date" value="{{cal_default}}"/>
+		  </label>
+		</div>
+
+		<div class="o-grid__col o-grid__col--1-of-3">
+		  <label class="c-label">
+		    Time
+		    <input class="c-input" type="time" value="{{time_default}}"/>
+		  </label>
+		</div>
+	</div>
+
+
+
+	<button type="submit" class="c-btn c-btn--primary c-btn--big">Submit</button>
+	</form>
+
+{% endblock %}

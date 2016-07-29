@@ -1,0 +1,31 @@
+{
+  "name": "gainful",
+  "version": "1.0.0",
+  "description": "Gainful web",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samirnaik/gainful.git"
+  },
+  "author": "samirnaik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samirnaik/gainful/issues"
+  },
+  "homepage": "https://github.com/samirnaik/gainful#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run watch-css",
+    "build-css": "gulp styles",
+    "watch-css": "gulp"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Gainful</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href={{url_for('static', filename='css/scooter.css')}}>
+  </head>
+  <body>
+    <nav>
+      <ul class="c-tab-nav" role="tablist">
+        <li class="c-tab-nav__tab brand">
+          <a href="{{ url_for('customer_admin.home') }}"><img src="{{url_for('static', filename='img/gainful_logo.png')}}" width=50></a>
+        </li>
+        <li role="presentation" class="c-tab-nav__tab is-active">
+          <a href="{{ url_for('customer_admin.home') }}">Overview</a>
+        </li>
+        <li role="presentation" class="c-tab-nav__tab">
+          <a href="{{ url_for('customer_admin.scheduler') }}">Message Scheduler</a></button>
+        </li>
+        <li role="presentation" class="c-tab-nav__tab">
+          <a href="{{ url_for('customer_admin.students') }}">Students</a>
+        </li>
+        <li role="presentation" class="c-tab-nav__tab">
+          <a href="{{ url_for('customer_admin.groups') }}">Groups</a>
+        </li>
+        <li role="presentation" class="c-tab-nav__tab">
+          <a href="{{ url_for('customer_admin.reports') }}">Reports</a>
+        </li>
+      </ul>
+    </nav>  
+    <div class="o-grid">
+      <div class="o-grid__col o-grid__col--1-of-12">
+      </div>
+      <div class="o-grid__col o-grid__col--8-of-12">
+        <div class="u-pad-l">
+        {% block content %}{% endblock %}
+        </div>
+      </div>
+      <div class="o-grid__col o-grid__col--3-of-12">
+        {% block right_column %}{% endblock %}
+      </div>
+    </div>
+    <div id="content"></div>
+    {% block modal %}{% endblock %}
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+  {% block page_scripts %}{% endblock %}
+</html>

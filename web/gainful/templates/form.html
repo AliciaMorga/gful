@@ -1,0 +1,31 @@
+{# [START form] #}
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="c-modal">
+    <div class="c-modal__header">
+      <h2>Try Gainful</h2>
+    </div>
+    <div class="c-modal__content">
+      <form method="POST" enctype="multipart/form-data">
+
+          <label class="c-label">Name
+            <input type="text" name="name" id="name" value="{{user.name}}" class="c-input"/>
+          </label>
+
+          <label class="c-label">Phone Number
+            <input type="text" name="mobile_number" id="mobile_number" value="{{user.mobile_number}}" class="c-input"/>
+          </label>
+
+          <label class="c-label">Email
+            <input type="text" name="email" id="email" value="{{user.email}}" class="c-input"/>
+          </label>
+
+          <input type="hidden" name="contact_type" value="colleges">
+
+        <button type="submit" class="c-btn c-btn--primary c-btn--big c-btn--full">Submit</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+{# [END form] #}

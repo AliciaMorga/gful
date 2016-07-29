@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="groups_content"></div>
+<div id="group_content"></div>
+
+{% if next_page_token %}
+<nav>
+<ul class="pager">
+<li><a href="?page_token={{next_page_token}}">More</a></li>
+</ul>
+</nav>
+{% endif %}
+ 
+{% endblock %}
+
+
+{% block modal %}
+<div id="newGroupModal" class="c-modal-overlay" style="display:none">
+	<div class="c-modal">
+		<div class="c-modal__header">
+		  <h2>Create a group</h2>
+		</div>
+		<div class="c-modal__content">
+		  <form method="POST" enctype="multipart/form-data">
+		      <label class="c-label">Group name
+		        <input type="text" name="name" id="name" class="c-input"/>
+		      </label>
+
+		     <div class="clearfix">
+		         <div class="u-l-fr">
+			        <button type="submit" class="c-btn c-btn--primary">Create</button>
+			        <button type="button" class="c-btn c-btn--secondary" onclick="GG.dismissModal()">Cancel</button>
+			     </div>
+		     </div>
+		  </form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block page_scripts %}
+  <script type="text/babel" src="{{url_for('static', filename='js/groups.js')}}"></script>
+{% endblock %}

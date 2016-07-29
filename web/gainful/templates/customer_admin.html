@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Messages Scheduled</h2>
+{% if scheduled_messages %}
+
+{% else %}
+<p>No messages scheduled</p>
+<a href="{{ url_for('customer_admin.scheduler') }}">Schedule new message</a>
+{% endif %}
+
+<hr />
+
+<h2>Messages Sent</h2>
+
+
+{% endblock %}

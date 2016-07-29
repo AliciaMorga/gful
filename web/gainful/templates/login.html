@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Gainful</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href={{url_for('static', filename='css/scooter.css')}}>
+  </head>
+  <body>
+    <div id="newGroupModal" class="c-modal-overlay login">
+      <div class="c-modal">
+        <div class="c-modal__header">
+          <h2>Login to Gainful</h2>
+        </div>
+        <div class="c-modal__content">
+          <form method="POST" enctype="multipart/form-data">
+
+              <label class="c-label">Email
+                <input type="email" name="email" id="email" class="c-input"/>
+              </label>
+
+              <label class="c-label">Password
+                <input type="password" name="password" id="password" class="c-input"/>
+              </label>
+
+            <button type="submit" class="c-btn c-btn--primary c-btn--big c-btn--full">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+</html>

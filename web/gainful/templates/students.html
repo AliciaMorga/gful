@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="u-l-fl">Students</h2>
+
+<div class="u-pad-s">
+	<div class="page-menu u-l-fr">
+		<button id="newStudentBtn" class="c-btn c-btn--primary" onclick="GG.onAddStudentClicked()">Add student</button>
+	</div>
+
+	{% if users %}
+		<table class="c-table">
+		<thead>
+		  <tr>
+		    <th>Name</th>
+		    <th>Phone</th>
+		    <th>Email</th>
+		  </tr>
+		</thead>
+		<tbody>
+		{% for user in users %}
+			{% if user.name and user.mobile_number %}
+			  <tr>
+			    <td>{{user.name}}</td>
+			    <td>{{user.mobile_number}}</td>
+			    <td>{{user.email}}</td>
+			  </tr>
+		  	{% endif %}
+		{% endfor %}
+		</tbody>
+		</table>
+	{% else %}
+		<p>No users found</p>
+	{% endif %}
+</div>
+
+{% if next_page_token %}
+<nav>
+  <ul class="pager">
+    <li><a href="?page_token={{next_page_token}}">More</a></li>
+  </ul>
+</nav>
+{% endif %}
+
+{% endblock %}
+
+{% block modal %}
+<div id="newStudentModal" class="c-modal-overlay" style="display:none">
+  <div class="c-modal">
+    <div class="c-modal__header">
+      <h2>Add student</h2>
+    </div>
+    <div class="c-modal__content">
+      <form method="POST" enctype="multipart/form-data">
+
+          <label class="c-label">Name
+            <input type="text" name="name" id="name"class="c-input"/>
+          </label>
+
+          <label class="c-label">Phone Number
+            <input type="text" name="mobile_number" id="mobile_number" class="c-input"/>
+          </label>
+
+          <label class="c-label">Email
+            <input type="text" name="email" id="email" class="c-input"/>
+          </label>
+
+	     <div class="clearfix">
+	         <div class="u-l-fr">
+		        <button type="submit" class="c-btn c-btn--primary">Add student</button>
+		        <button type="button" class="c-btn c-btn--secondary" onclick="GG.dismissModal()">Cancel</button>
+		     </div>
+	     </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

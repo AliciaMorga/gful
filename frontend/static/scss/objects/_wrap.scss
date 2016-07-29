@@ -1,0 +1,12 @@
+//-----------------------------
+// Object: Wrap
+//-----------------------------
+
+$DBwrap-namespace: "o-wrap" !default;
+$DBwrap-width: 990px !default;
+
+.#{$DBwrap-namespace} {
+    display: block;
+    max-width: $DBwrap-width;
+    margin: 0 auto;
+}

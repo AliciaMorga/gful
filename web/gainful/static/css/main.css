@@ -1,0 +1,20 @@
+nav {
+  background-color: color(gray, x-light); }
+
+.right-column {
+  background: #fff;
+  bottom: 0;
+  box-shadow: -10px 0 8px #fff;
+  padding: 0 40px 0 15px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2; }
+
+.login {
+  background-color: color(gray, dark); }
+  .login .c-modal {
+    max-width: 400px; }
+
+.user-list td {
+  padding: 5px; }

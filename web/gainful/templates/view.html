@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>User</h3>
+
+<div class="btn-group">
+  <a href="/users/{{user.id}}/edit" class="c-btn c-btn--primary">
+    <i class="glyphicon glyphicon-edit"></i>
+    Edit user
+  </a>
+  <a href="/users/{{user.id}}/delete" class="c-btn c-btn--primary">
+    <i class="glyphicon glyphicon-trash"></i>
+    Delete user
+  </a>
+</div>
+
+<div class="media">
+  <div class="media-body">
+    <ul class="list-group">
+      <li class="list-group-item">{{user.name}}</li>
+      <li class="list-group-item">{{user.phonenumber}}</li>
+      <li class="list-group-item">{{user.email}}</li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
