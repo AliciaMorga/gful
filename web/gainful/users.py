@@ -51,7 +51,7 @@ def add():
 
         print "Creating contact number %s" % mobile_number
         create_onereach_contact(contact_type=contact_type, name=name, number=mobile_number, email=email)
-        return redirect("http://try.getgainful.com/thankyou2/")
+        return redirect("https://www.getgainful.com/thank-you")
         # return redirect(url_for('.view', id=user['id']))
 
     return render_template("form.html", action="Add", user={})
